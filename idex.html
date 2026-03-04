@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Financeiro</title>
+</head>
+<body>
+    <div class="div_titulo">
+        <h1>Controle Financeiro</h1>
+    </div>
+
+    <div class="div_saldo">
+        <h2 class="subtitulo_saldo">Saldo Atual</h2>
+        <p class="paragrafo_saldo" id="saldo_atual">R$ 0.00</p>
+    </div>
+
+    <div class="div_movimento">
+        <h2 class="subtitulo_movimento">Nova Movimentação</h2>
+        <div class="input">
+            <p class="paragrafo_movimento">tipo</p>
+            <select class="input_movimento" id="tipo_movimento">
+                <option value="entrada">Entrada</option>
+                <option value="saida">Saída</option>
+            </select>
+        </div>
+        <div class="input">
+            <p class="paragrafo_descricao">descrição</p>
+            <input class="input_descricao" type="text" id="descricao_movimento" placeholder="Ex: Salário">
+        </div> 
+        <div class="valor-data">
+            <div class="input">
+                <p class="paragrafo_valor">valor</p>
+                <input class="input_valor" type="number" id="valor_movimento" placeholder="Ex: 1000.00">
+            </div>
+            <div class="input">
+                <p class="paragrafo_data">data</p>
+                <input class="input_data" type="date" id="data_movimento">
+            </div>
+
+            <button class="botao_adicionar" onclick="adicionar()">Adicionar</button>
+        </div>
+    </div>
+        
+  <script defer src="app.js"></script>
+</body>
+</html>

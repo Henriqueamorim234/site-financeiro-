@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+
+  --fundo-primario: #0F1117;
+  --fundo-segundario: #141824;
+  --cards: #1A1D26;
+  --campos-primarios: #222633;
+  --campos-borda: #2F3445;
+  --saldo-positivo: #22C55E;
+  --saldo-positivo-hover: #16A34A;
+  --luz-positiva: #86EFAC;
+  --saldo-negativo: #EF4444;
+  --luz-negativa: #F87171;
+  --texto-primario: #E5E7EB;
+  --texto-segundario: #9CA3AF;
+  --sombras: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+  --font-primaria: 'Playfair Display', serif;
+}
+
+body{
+    background-color: var(--fundo-primario);
+    color: var(--texto-primario);
+    font-family: var(--font-primaria);
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.div_titulo{
+ border-bottom: solid 1px var(--campos-borda);
+ padding: 0 12rem;
+}
+
+h1 {
+  padding-bottom: 0.1em;
+}
+
+.div_saldo{
+    background-color: var(--fundo-segundario);
+    padding: 0;
+}
+
+input{
+    background-color: var(--campos-primarios);
+    border: solid 1px var(--campos-borda);
+    color: var(--texto-primario);
+    padding: 0.5em;
+    border-radius: 4px;
+}

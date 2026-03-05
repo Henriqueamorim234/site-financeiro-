@@ -14,7 +14,7 @@
 
     <div class="div_saldo">
         <h2 class="subtitulo_saldo">Saldo Atual</h2>
-        <p class="paragrafo_saldo" id="saldo_atual">R$ 0.00</p>
+        <p class="saldo" id="saldo_atual">R$ 0.00</p>
     </div>
 
     <section class="secao_movimento">
@@ -32,18 +32,71 @@
                 <input class="input_descricao" type="text" id="descricao_movimento" placeholder="Ex: Salário">
             </div> 
             <div class="valor-data">
-                <div class="input">
+                <div class="input_valor">
                     <p class="paragrafo_valor">Valor</p>
                     <input class="input_valor" type="text" id="valor_movimento" placeholder="Ex: 1000.00">
                 </div>
-                <div class="input">
+                <div class="input_data">
                     <p class="paragrafo_data">Data</p>
                     <input class="input_data" type="date" id="data_movimento">
                 </div>
-
                 <button class="botao_adicionar" onclick="adicionar()">Adicionar</button>
             </div>
         </div>
+    </section>
+
+    
+    <section class="secao_filtro">
+        <h2>Filtrar</h2>
+        <div class="div_filtro">
+            <p class="paragrafo_movimento">Tipo:</p>
+            <select class="select_filtro" id="filtro_tipo">
+                <option value="todos">Todos</option>
+                <option value="entrada">Entrada</option>
+                <option value="saida">Saída</option>
+            </select>
+            <select class="select_filtro" id="filtro_meses">
+                <option vaue="todos">Todos os meses</option>
+                <option value="mes_1">Janeiro</option>
+                <option value="mes_2">Fevereiro</option>
+                <option value="mes_3">Março</option>
+                <option value="mes_4">Abril</option>
+                <option value="mes_5">Maio</option>
+                <option value="mes_6">Junho</option>
+                <option value="mes_7">Julho</option>
+                <option value="mes_8">Agosto</option>
+                <option value="mes_9">Setembro</option>
+                <option value="mes_10">Outubro</option> 
+                <option value="mes_11">Novembro</option>
+                <option value="mes_12">Dezembro</option>
+            </select>
+        </div>
+    </section>    
+
+    <section class="secao_historico">
+        <h2 class="subtitulo_historico">Histórico</h2>
+        <ul class="lista_historico" id="lista_historico">
+            <li class="item_historico">
+                <div class="div_historico">
+                    <button class="historico_entrada">entrada</button>
+                    <p class="historico_descricao">Salário</p>
+                </div>
+                <div class="div_historico">    
+                    <p class="historico_valor">R$ 1000.00</p>
+                    <button class="botao_excluir" onclick="excluir(0)">Excluir</button>
+                </div>    
+            </li>
+                <li class="item_historico">
+                <div class="div_historico">    
+                    <button class="historico_saida">saida</button>
+                    <p class="historico_descricao">Salário</p>
+                </div>
+                <div class="div_historico">    
+                    <p class="historico_valor">R$ 1000.00</p>
+                    <button class="botao_excluir" onclick="excluir(0)">Excluir</button>
+                </div>        
+            </li>
+        </ul>
     </section>
   <script defer src="app.js"></script>
 </body>

@@ -42,6 +42,14 @@ body{
   font-size: 2rem;
 }
 
+saldo_positivo{
+    color: var(--saldo-positivo);
+}
+
+saldo_negativo{
+    color: var(--saldo-negativo);
+}
+
 .div_saldo{
     background-color: var(--fundo-segundario);
     padding: 2em 0;
@@ -56,6 +64,15 @@ body{
     padding: 0 15em 1em 15em;
 }
 
+.subtitulo_movimento{
+    text-align: center;
+    background-color: var(--fundo-primario);
+    padding: 0.5em 10em;
+    margin: 0;
+    border: solid 1px var(--campos-borda);
+    border-radius: 10px;
+}
+
 input{
     background-color: var(--campos-primarios);
     border: solid 1px var(--campos-borda);
@@ -68,16 +85,26 @@ input{
   display: flex;
   gap: 1em;
   align-items: center;
-  margin-top: 1em;
+  margin-top: 0.5em;
+  border-bottom: solid 1px var(--campos-borda);
+  padding-bottom: 0.5em;
+}
+
+.input_valor, .input_data{
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  margin-top: 0.5em;
 }
 
 .secao_movimento{
     background-color: var(--fundo-segundario);
-    padding: 2em;
+    padding: 1em 2em 2em 2em;
     border-radius: 15px;
-    margin-top: 2em;
+    margin-top: 1em;
     width: 100%;
     max-width: 500px;
+    margin-bottom: 1em;
 }
 
 .input_movimento{
@@ -109,5 +136,79 @@ input{
     padding: 0.5em 1em;
     margin-top: 1em;
     border-radius: 4px;
+    cursor: pointer;
+}
+
+.secao_filtro{
+    border-top: solid 1px var(--campos-borda);
+    border-bottom: solid 1px var(--campos-borda);
+    padding: 1em 1em;
+}
+
+.div_filtro{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    text-align: center;
+    padding-right: 17em;
+    margin-top: 0.25em;
+}
+
+.select_filtro{
+    background-color: var(--campos-primarios);
+    color: var(--texto-primario);
+    border: solid 1px var(--campos-borda);
+    padding: 0.5em;
+    border-radius: 4px;
+}
+
+.secao_historico{
+    padding-right: 7em;
+    margin-top: 1em;
+}
+
+.lista_historico{
+    background-color: var(--fundo-segundario);
+    padding: 0.5em 2em;
+    border-radius: 15px;
+    margin: 1em 0;
+    width: 100%;
+    max-width: 500px;
+}
+
+.item_historico{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 1em;
+    border-bottom: solid 1px var(--campos-borda);
+}
+
+.div_historico{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.historico_entrada{
+    background-color: var(--saldo-positivo);
+    color: var(--texto-primario);
+    border: none;
+    padding: 0.25em 0.5em;
+    border-radius: 4px;
+}
+
+.historico_saida{
+    background-color: var(--saldo-negativo);
+    color: var(--texto-primario);
+    border: none;
+    padding: 0.25em 0.5em;
+    border-radius: 4px;
+}
+
+.botao_excluir{
+    background-color: transparent;
+    color: var(--texto-segundario);
+    border: none;
+    padding: 0.25em 0.5em;
     cursor: pointer;
 }

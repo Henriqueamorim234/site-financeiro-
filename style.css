@@ -34,15 +34,26 @@ body{
 .div_titulo{
  border-bottom: solid 1px var(--campos-borda);
  padding: 0 12rem;
+ margin-bottom: 2em;
 }
 
-h1 {
-  padding-bottom: 0.1em;
+.titulo{
+  padding: 0.5em 0;
+  font-size: 2rem;
 }
 
 .div_saldo{
     background-color: var(--fundo-segundario);
-    padding: 0;
+    padding: 2em 0;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.subtitulo_saldo{
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    border-bottom: solid 1px var(--campos-borda);
+    padding: 0 15em 1em 15em;
 }
 
 input{
@@ -51,4 +62,52 @@ input{
     color: var(--texto-primario);
     padding: 0.5em;
     border-radius: 4px;
+}
+
+.input{
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.secao_movimento{
+    background-color: var(--fundo-segundario);
+    padding: 2em;
+    border-radius: 15px;
+    margin-top: 2em;
+    width: 100%;
+    max-width: 500px;
+}
+
+.input_movimento{
+    padding: 0.5em 20em 0.5em 0;
+    background-color: var(--campos-primarios);
+    color: var(--texto-primario);
+    border: solid 1px var(--campos-borda);
+    border-radius: 4px;
+}
+
+.input_descricao{
+    padding: 0.5em 20em 0.5em 0;
+    background-color: var(--campos-primarios);
+    color: var(--texto-primario);
+    border: solid 1px var(--campos-borda);
+    border-radius: 4px;
+}
+
+.valor-data{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+} 
+
+.botao_adicionar{
+    background-color: var(--saldo-positivo);
+    color: var(--texto-primario);
+    border: none;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    border-radius: 4px;
+    cursor: pointer;
 }

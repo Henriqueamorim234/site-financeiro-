@@ -1,11 +1,7 @@
 let listaHistorico = document.getElementById("lista_historico");
-listaHistorico.innerHTML = ''
+let listaMovimentos = [];
 let subtituloHistorico = document.getElementById("subtitulo_historico");
-
-if (listaHistorico == ''){
-    listaHistorico.classList .add("lista_vazia");
-    subtituloHistorico.innerHTML = "Nenhum movimento registrado";
-}
+let historicoVazio = document.getElementById('historico_vazio');
 
 function adicionar(){
 
@@ -19,16 +15,43 @@ if (isNaN(valorMovimento)) {
     return;
 }
 
-let listaHistorico = document.getElementById("lista_historico");
+let itensDaLista = {
+    tipo: tipoMovimento,
+    valor: valorMovimento,
+    descricao: descricaoMovimento,
+    data: dataMovimento
+};
 
-listaHistorico.innerHTML += `<li class="item_historico"> 
-    <div class="div_historico">
-        <button class="historico_${tipoMovimento}">${tipoMovimento}</button>
-        <p class="historico_descricao">${descricaoMovimento}</p>
-    </div>
-    <div class="div_historico">    
-        <p class="historico_valor">R$ ${valorMovimento.toFixed(2)}</p> 
-        <button class="botao_excluir" onclick="excluir(0)">Excluir</button>
-    </div>    
-</li>`; 
+listaMovimentos.push(itensDaLista)
+atualizarTela()
+verificandoListaMovimentos()
+}
+function atualizarTela(){
+listaHistorico.innerHTML = '';
+listaMovimentos.forEach((item, index) => {
+    listaHistorico.innerHTML += 
+`<li class="item_historico">
+<div class="div_historico">
+<button class="historico_${item.tipo}">
+${item.tipo === "entrada" ? "Entrada" : "Saída"}
+</button>
+<p class="historico_descricao">${item.descricao}</p>
+</div>
+<div class="div_historico">
+<p class="historico_valor">R$ ${item.valor.toFixed(2)}</p>
+<button class="botao_excluir" onclick="excluir(${index})">
+Excluir
+</button>
+</div>
+</li>`;})
+}
+
+function verificandoListaMovimentos(){
+    if (listaMovimentos.length !== 0){
+        historicoVazio.style.display = 'none';
+        listaHistorico.classList.add('lista_historico');
+        listaHistorico.classList.remove('lista_historico_vazio');
+    }    
+
+    console.log(listaHistorico.classList);
 }

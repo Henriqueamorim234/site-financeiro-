@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="reset.css">
     <title>Financeiro</title>
 </head>
 <body>
@@ -74,28 +73,10 @@
     </section>    
 
     <section class="secao_historico">
-        <h2 class="subtitulo_historico">Histórico</h2>
-        <ul class="lista_historico" id="lista_historico">
-            <li class="item_historico">
-                <div class="div_historico">
-                    <button class="historico_entrada">entrada</button>
-                    <p class="historico_descricao">Salário</p>
-                </div>
-                <div class="div_historico">    
-                    <p class="historico_valor">R$ 1000.00</p>
-                    <button class="botao_excluir" onclick="excluir(0)">Excluir</button>
-                </div>    
-            </li>
-                <li class="item_historico">
-                <div class="div_historico">    
-                    <button class="historico_saida">saida</button>
-                    <p class="historico_descricao">Salário</p>
-                </div>
-                <div class="div_historico">    
-                    <p class="historico_valor">R$ 1000.00</p>
-                    <button class="botao_excluir" onclick="excluir(0)">Excluir</button>
-                </div>        
-            </li>
+        <h2 class="subtitulo_historico" id="subtitulo_historico">Histórico</h2>
+        <p class="historico_vazio" id="historico_vazio">Não há nada no historico no momento</p>
+        <ul class="lista_historico_vazio" id="lista_historico">
+
         </ul>
     </section>
   <script defer src="app.js"></script>

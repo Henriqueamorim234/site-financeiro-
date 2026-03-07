@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url(reset.css);
 
 :root {
 
@@ -167,6 +168,15 @@ input{
     margin-top: 1em;
 }
 
+.lista_historico-vazio{
+    background-color: var(--fundo-primario);
+    padding: 0.5em 2em;
+    border-radius: 15px;
+    margin: 1em 0;
+    width: 100%;
+    max-width: 500px;
+}
+
 .lista_historico{
     background-color: var(--fundo-segundario);
     padding: 0.5em 2em;
@@ -205,6 +215,13 @@ input{
     border-radius: 4px;
 }
 
+.historico_vazio{
+    margin-top: 1em;
+    padding: 0.5em 0.25em;
+    background-color: var(--fundo-segundario);
+    border-radius: 5px;
+}
+
 .botao_excluir{
     background-color: transparent;
     color: var(--texto-segundario);
@@ -212,3 +229,5 @@ input{
     padding: 0.25em 0.5em;
     cursor: pointer;
 }
+
+

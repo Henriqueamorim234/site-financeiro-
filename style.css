@@ -217,7 +217,7 @@ input{
 
 .historico_vazio{
     margin-top: 1em;
-    padding: 0.5em 0.25em;
+    padding: 0.7em 0.5em;
     background-color: var(--fundo-segundario);
     border-radius: 5px;
 }

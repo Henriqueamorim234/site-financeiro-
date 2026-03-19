@@ -1,11 +1,12 @@
 let listaHistorico = document.getElementById("lista_historico");
+let tipoMovimento = document.getElementById("tipo_movimento").value
 let listaMovimentos = [];
-let listaEntrada = [];
-let listaSaida = [];
 let subtituloHistorico = document.getElementById("subtitulo_historico");
 let historicoVazio = document.getElementById('historico_vazio');
-let somaEntrada = 0;
-let somaSaida = 0;
+let saldo = 0;
+let saldoAtual = document.getElementById('saldo_atual');
+let index = 0;
+
 
 
 function adicionar(){
@@ -30,7 +31,7 @@ let itensDaLista = {
 listaMovimentos.push(itensDaLista)
 atualizarTela()
 verificandoListaMovimentos()
-atualizaValor();
+atualizaValor(tipoMovimento,valorMovimento);
 }
 
 function atualizarTela(){
@@ -52,9 +53,19 @@ index++
 
 
 function excluir(index){
+    const item = listaMovimentos[index];
+    if (!item) return;
+
+    if (item.tipo === 'entrada') {
+        saldo -= item.valor; // remover entrada diminui saldo
+    } else if (item.tipo === 'saida') {
+        saldo += item.valor; // remover saída aumenta saldo
+    }
+
     listaMovimentos.splice(index, 1);
-    atualizarTela()
-    verificandoListaMovimentos()
+    atualizarTela();
+    verificandoListaMovimentos();
+    saldoAtual.innerHTML = saldo.toFixed(2);
 }
 
 function verificandoListaMovimentos(){
@@ -67,30 +78,16 @@ function verificandoListaMovimentos(){
         listaHistorico.classList.add('lista_historico_vazio');
         listaHistorico.classList.remove('lista_historico');
     }  
-
-    console.log(historicoVazio.style.display)
 }
 
-function atualizaValor(){
-
-
-    listaMovimentos.forEach((item) => {
-        if (item.tipo = 'entrada') {
-            listaEntrada.push(item.valor);
-                let i = 0;
-            somaEntrada += listaEntrada[i];
-
-        } else if (item.tipo = 'saida') {
-            listaSaida.push(item.valor)
-        }
-    })
-
-        for(i = 0; i < listaSaida.length; i++){
-        somaSaida = [];
-        somaSaida += listaSaida[i];
+function atualizaValor(tipos,valor){
+    if (tipos == 'entrada'){
+        saldo += valor;
+    } else if (tipos == 'saida') {
+       saldo -= valor;
     }
-
-    let saldo = document.getElementById('saldo_atual');
-
-    saldo.innerHTML = somaEntrada - somaSaida;
+    saldoAtual.innerHTML = saldo;
 }
+
+
+    
